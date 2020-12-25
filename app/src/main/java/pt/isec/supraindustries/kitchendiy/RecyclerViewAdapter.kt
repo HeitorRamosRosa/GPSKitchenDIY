@@ -2,22 +2,19 @@ package pt.isec.supraindustries.kitchendiy
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlinx.android.synthetic.main.recyclerview_row.view.*
-
 import android.widget.Filter
 import android.widget.Filterable
 
-class RecyclerView_Adapter (private var listaIngredientes: ArrayList<String>) :
-        RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
+class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
 
     var filtroListaIngredientes = ArrayList<String>()
 
@@ -36,21 +33,23 @@ class RecyclerView_Adapter (private var listaIngredientes: ArrayList<String>) :
         mcontext = parent.context
         return sch
     }
+
     override fun getItemCount(): Int {
         return filtroListaIngredientes.size
     }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         holder.itemView.select_ingredientes_text.text = filtroListaIngredientes[position]
 
         holder.itemView.setOnClickListener {
             val intent = Intent(mcontext, DetailsActivity::class.java)
-            intent.putExtra("passselectedingrediente", filtroListaIngredientes[position])
+            intent.putExtra("stuff", filtroListaIngredientes[position])
             mcontext.startActivity(intent)
             Log.d("Selected:", filtroListaIngredientes[position])
         }
-    }
+    }       //isto crasha e nao sei pk
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
     override fun getFilter(): Filter {
         return object : Filter() {

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btn_verReceitas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ver Receitas"
@@ -26,36 +26,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/search_Ingredientes"
         android:layout_width="261dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/btnInicio">
 
-    </SearchView>
+    </androidx.appcompat.widget.SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvIngredientes"
-        android:layout_width="297dp"
-        android:layout_height="500dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:id="@+id/ingredientes_rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_Ingredientes" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="259dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:text="Escrever Ingrediente:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnInicio" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">KitchenDIY</string>
+
+    <string-array name="array_ingredientes">
+        <item>Batatas</item>
+        <item>Arroz</item>
+        <item>Massa</item>
+        <item>Lentilhas</item>
+        <item>Massa de Tomate</item>
+        <item>Ovo</item>
+        <item>Salsichas</item>
+        <item>Carne Picada</item>
+        <item>Atum</item>
+        <item>Natas</item>
+        <item>Favas</item>
+        <item>Queijo</item>
+    </string-array>
 </resources>

@@ -11,7 +11,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        detail_ingredientes_text.text = intent.extras!!.getString("passselectedingredient")!!
+        detail_ingredientes_text.text = intent.extras!!.getString("stuff")!!
 
     }
 }
