@@ -9,6 +9,7 @@ import pt.isec.supraindustries.kitchendiy.RecyclerView_Adapter
 
 class ActivityEscolherIngredientes : AppCompatActivity() {
     var ingredientes = arrayOf("Batatas", "Massa", "Massa de Tomate", "Queijo", "Arroz", "Salsichas", "Natas", "Lentilhas", "Carne Picada")
+
     lateinit var adapter: RecyclerView_Adapter
     lateinit var ingredientesrv: RecyclerView
 
