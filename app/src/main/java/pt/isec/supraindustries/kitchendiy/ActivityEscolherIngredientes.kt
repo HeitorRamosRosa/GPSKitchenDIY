@@ -4,13 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.graphics.Color
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.widget.SearchView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.collections.ArrayList
+import pt.isec.supraindustries.kitchendiy.RecyclerView_Adapter
 
 class ActivityEscolherIngredientes : AppCompatActivity() {
     var ingredientes = arrayOf("Batatas", "Massa", "Massa de Tomate", "Queijo", "Arroz", "Salsichas", "Natas", "Lentilhas", "Carne Picada")

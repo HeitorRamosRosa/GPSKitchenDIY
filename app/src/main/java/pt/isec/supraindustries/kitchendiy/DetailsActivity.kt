@@ -1,9 +1,9 @@
-package pt.isec.supraindustries.kitchendiy.pt.isec.supraindustries.kitchendiy
+package pt.isec.supraindustries.kitchendiy
 
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_details.
+import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
 

@@ -2,20 +2,19 @@ package pt.isec.supraindustries.kitchendiy
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.appcompat.widget.SearchView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import pt.isec.supraindustries.kitchendiy.pt.isec.supraindustries.kitchendiy.DetailsActivity
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlinx.android.synthetic.main.recyclerview_row.view.*
+
+import android.widget.Filter
+import android.widget.Filterable
 
 class RecyclerView_Adapter (private var listaIngredientes: ArrayList<String>) :
         RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
@@ -42,9 +41,7 @@ class RecyclerView_Adapter (private var listaIngredientes: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.select_ingredientes_container.setBackgroundColor(Color.TRANSPARENT)
 
-        holder.itemView.select_ingredientes_text.setTextColor(Color.WHITE)
         holder.itemView.select_ingredientes_text.text = filtroListaIngredientes[position]
 
         holder.itemView.setOnClickListener {
