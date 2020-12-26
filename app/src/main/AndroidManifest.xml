@@ -9,10 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KitchenDIY">
-        <activity android:name=".activityreceita"></activity>
-        <activity android:name=".DetailsActivity"></activity>
-        <activity android:name=".activityVerReceitas" />
-        <activity android:name=".ActivityEscolherIngredientes" />
+        <activity android:name=".VerReceitas" />
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".EscolherIngredientes" />
         <activity android:name=".getNumber" />
         <activity android:name=".addNumber" />
         <activity android:name=".MainActivity">

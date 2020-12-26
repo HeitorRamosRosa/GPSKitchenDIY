@@ -23,12 +23,14 @@
             android:id="@+id/btnEscolherIngredientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolher os Ingredientes">
+            android:text="Escolher os Ingredientes"
+            android:onClick="loadEscolherIngredientes">
         </Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver Receita">
+            android:text="Ver Receitas"
+            android:onClick="loadVerReceitas">
         </Button>
         <Button
             android:layout_width="match_parent"

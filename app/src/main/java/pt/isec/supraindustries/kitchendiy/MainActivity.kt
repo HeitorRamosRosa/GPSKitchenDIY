@@ -10,12 +10,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+    fun loadEscolherIngredientes(view: View) {
+        val intent = Intent(this, EscolherIngredientes::class.java)
+        startActivity(intent)
+    }
 
-        val cenas:Button = findViewById(R.id.btnEscolherIngredientes)
-        cenas.setOnClickListener {
-            val intent = Intent(this@MainActivity, ActivityEscolherIngredientes::class.java)
-            startActivity(intent)
-        }
+    fun loadVerReceitas(view: View) {
+        val intent = Intent(this, VerReceitas::class.java)
+        startActivity(intent)
     }
 
     fun loadAddNumber(view: View) {

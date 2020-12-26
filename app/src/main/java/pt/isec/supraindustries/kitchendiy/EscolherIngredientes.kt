@@ -15,7 +15,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class ActivityEscolherIngredientes : AppCompatActivity() {
+class EscolherIngredientes : AppCompatActivity() {
     lateinit var adapter: RecyclerViewAdapter
     lateinit var ingredientesrv: RecyclerView
 
@@ -27,24 +27,24 @@ class ActivityEscolherIngredientes : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.btnInicio)
         button.setOnClickListener {
-            val i = Intent(this@ActivityEscolherIngredientes, MainActivity::class.java)
+            val i = Intent(this@EscolherIngredientes, MainActivity::class.java)
             startActivity(i)
         }
 
 //listagem de ingredientes
 
-        val searchIcon = search_Ingredientes.findViewById<ImageView>(R.id.search_mag_icon)
+        val searchIcon = search_Receita.findViewById<ImageView>(R.id.search_mag_icon)
         searchIcon.setColorFilter(Color.BLACK)
-        val cancelIcon = search_Ingredientes.findViewById<ImageView>(R.id.search_close_btn)
+        val cancelIcon = search_Receita.findViewById<ImageView>(R.id.search_close_btn)
         cancelIcon.setColorFilter(Color.BLACK)
-        val textView = search_Ingredientes.findViewById<TextView>(R.id.search_src_text)
+        val textView = search_Receita.findViewById<TextView>(R.id.search_src_text)
         textView.setTextColor(Color.BLACK)
 
-        ingredientesrv = findViewById(R.id.ingredientes_rv)
+        ingredientesrv = findViewById(R.id.receitas_rv)
         ingredientesrv.layoutManager = LinearLayoutManager(ingredientesrv.context)
         ingredientesrv.setHasFixedSize(true)
 
-        search_Ingredientes.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        search_Receita.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
@@ -58,7 +58,7 @@ class ActivityEscolherIngredientes : AppCompatActivity() {
         listarIngredientes()
     }
     private fun listarIngredientes() {
-        val lista = ListaDeIngredientes(this).getLista()
+        val lista = Listas(this).getListaIngredientes()
         val cenas = ArrayList<String>()
         for (i in lista.indices){
             cenas.add(lista[i])

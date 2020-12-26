@@ -15,4 +15,14 @@
         <item>Favas</item>
         <item>Queijo</item>
     </string-array>
+
+    <string-array name="array_receitas">
+        <item>Arroz Doce</item>
+        <item>Empadão de arroz com frango</item>
+        <item>Bolonhesa de Lentilhas</item>
+        <item>Esparguete à bolonhesa</item>
+        <item>Macarrão com salsicha em 5 minutos</item>
+        <item>Batatas à espanhola</item>
+
+    </string-array>
 </resources>
