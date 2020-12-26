@@ -12,17 +12,36 @@ import java.io.InputStream
 import java.io.InputStreamReader
 import android.content.Intent
 import android.content.Context
-
+import android.widget.Button
+import java.io.File
 
 class LerReceita : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receita)
+        val button: Button = findViewById(R.id.btnInicio)
+        button.setOnClickListener {
+            val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+        }
         title = "KitchenDIY"
-
-       tv_receita.text=" bla bla bla"
+        ler()
     }
-
-
+    fun ler() {
+        var string: String? = ""
+        val stringBuilder = StringBuilder()
+        val `is`: InputStream = this.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+        val reader = BufferedReader(InputStreamReader(`is`))
+        while (true) {
+            try {
+                if (reader.readLine().also { string = it } == null) break
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            stringBuilder.append(string).append("\n")
+            tv_receita.text = stringBuilder
+        }
+        `is`.close()
+    }
 }
