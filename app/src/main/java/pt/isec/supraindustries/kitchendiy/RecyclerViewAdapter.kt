@@ -37,7 +37,7 @@ class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
     override fun getItemCount(): Int {
         return filtroListaIngredientes.size
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         holder.itemView.select_ingredientes_text.text = filtroListaIngredientes[position]
@@ -48,8 +48,7 @@ class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
             mcontext.startActivity(intent)
             Log.d("Selected:", filtroListaIngredientes[position])
         }
-    }       //isto crasha e nao sei pk
-///////////////////////////////////////////////////////////////////////////////////////////////////
+    }
 
     override fun getFilter(): Filter {
         return object : Filter() {
