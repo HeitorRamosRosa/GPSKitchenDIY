@@ -3,6 +3,7 @@ package pt.isec.supraindustries.kitchendiy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 
@@ -10,6 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i("Debug","Doing load receitas")
+        DataHandler.LoadReceitas(applicationContext)
+        Log.i("Debug","Load Receitas Done")
+        System.out.println("In main: ")
+        System.out.println(DataHandler.receitas[0].getInfo())
     }
     fun loadEscolherIngredientes(view: View) {
         val intent = Intent(this, EscolherIngredientes::class.java)

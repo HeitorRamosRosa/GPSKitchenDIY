@@ -32,6 +32,7 @@ class LerReceita : AppCompatActivity() {
         var string: String? = ""
         val stringBuilder = StringBuilder()
         val `is`: InputStream = this.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+
         val reader = BufferedReader(InputStreamReader(`is`))
         while (true) {
             try {
