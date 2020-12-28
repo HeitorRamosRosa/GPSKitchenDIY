@@ -36,7 +36,9 @@
             android:id="@+id/btnInformacoes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_informacoes">
+            android:text="@string/btn_informacoes"
+            android:onClick="loadInformacoes">
+
         </Button>
 
         <RelativeLayout
