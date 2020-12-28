@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".Informacoes">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,44 +18,48 @@
 
         </ImageView>
 
-        <Button
-            android:id="@+id/btnEscolherIngredientes"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolher os Ingredientes"
-            android:onClick="loadEscolherIngredientes">
-        </Button>
-        <Button
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:text="Autores">
+        </TextView>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver Receitas"
-            android:onClick="loadVerReceitas">
-        </Button>
-        <Button
-            android:id="@+id/btnInformacoes"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Ana Ferreira (a21271052@isec.pt) ">
+        </TextView>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informações"
-            android:onClick="loadInformacoes">
-        </Button>
-        <Button
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Diogo Lameiro (a21250382@isec.pt)  ">
+        </TextView>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alterar Linguagem">
-        </Button>
-        <Button
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Heitor Rosa (a21250425@isec.pt)   ">
+        </TextView>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="add number"
-            android:onClick="loadAddNumber">
-    </Button>
-        <Button
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Luís Marques (a9301030@isec.pt)   ">
+        </TextView>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="getNumber"
-            android:onClick="loadGetNumber">
-    </Button>
-
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:text="Pedro Rito (a21120641@isec.pt)  ">
+        </TextView>
 
     </LinearLayout>
 

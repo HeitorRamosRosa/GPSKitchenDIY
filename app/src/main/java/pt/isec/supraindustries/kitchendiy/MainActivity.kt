@@ -29,4 +29,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, getNumber::class.java)
         startActivity(intent)
     }
+
+    fun loadInformacoes(view: View) {
+        val intent = Intent(this,Informacoes::class.java)
+        startActivity(intent)
+    }
 }
