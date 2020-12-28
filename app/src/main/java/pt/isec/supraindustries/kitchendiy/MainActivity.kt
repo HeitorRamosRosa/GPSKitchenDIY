@@ -1,8 +1,10 @@
 package pt.isec.supraindustries.kitchendiy
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -100,5 +102,21 @@ class MainActivity : AppCompatActivity() {
     fun loadInformacoes(view: View) {
         val intent = Intent(this,Informacoes::class.java)
         startActivity(intent)
+    }
+
+    //enviar emails
+    fun sendHtmlEmailReceita(view: View?) {
+        val mailId = "grupo33GPS@gmail.com"
+        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", mailId, null))
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Nova receita")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<p><b>Quero sugerir uma nova receita</b></p>" + "<small><p>escreva aqui a receita</p></small>"))
+        startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
+    }
+    fun sendHtmlEmailIngrediente(view: View?) {
+        val mailId = "grupo33GPS@gmail.com"
+        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", mailId, null))
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Novo ingrediente")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml("<p><b>Quero sugerir um novo ingrediente</b></p>" + "<small><p>escreva aqui o(s) ingredientes</p></small>"))
+        startActivity(Intent.createChooser(emailIntent, "Enviar email..."))
     }
 }

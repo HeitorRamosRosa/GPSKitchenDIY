@@ -50,6 +50,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="4dp"
                 android:text="@string/btn_recomendar_ingrediente"
+                android:onClick="sendHtmlEmailIngrediente"
                 android:textSize="12sp" />
 
             <Button
@@ -59,6 +60,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="2dp"
                 android:text="@string/btn_recomendar_receita"
+                android:onClick="sendHtmlEmailReceita"
                 android:textSize="12sp" />
         </RelativeLayout>
 
