@@ -28,10 +28,12 @@ class DataHandler {
         }
 
         fun LoadReceitas(mcontext: Context){
-            LoadReceitaByName(mcontext,"[pt]bolonhesa_de_lentilhas_pt", "pt")
-            LoadReceitaByName(mcontext,"[pt]esparguete_a_bolonhesa_pt", "pt")
+            LoadReceitaByName(mcontext,"bolonhesa_de_lentilhas_pt", "pt")
+            LoadReceitaByName(mcontext,"esparguete_a_bolonhesa_pt", "pt")
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
             LoadReceitaByName(mcontext,"pao_com_chourico_ing", "ing")
+            LoadReceitaByName(mcontext,"PT_bolonhesa_de_lentilhas")
+            LoadReceitaByName(mcontext,"PT_esparguete_a_bolonhesa")
         }
 
         fun LoadReceitaByName(mcontext : Context, fileName : String, lang: String){
