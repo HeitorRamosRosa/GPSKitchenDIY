@@ -23,31 +23,59 @@
             android:id="@+id/btnEscolherIngredientes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Escolher os Ingredientes"
+            android:text="@string/btn_escolher_ingredientes"
             android:onClick="loadEscolherIngredientes">
         </Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver Receitas"
+            android:text="@string/btn_ver_receitas"
             android:onClick="loadVerReceitas">
         </Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informações">
+            android:text="@string/btn_informacoes">
         </Button>
-        <Button
+
+        <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_recomendar_ingrediente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="4dp"
+                android:text="@string/btn_recomendar_ingrediente"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btn_recomendar_receita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="2dp"
+                android:text="@string/btn_recomendar_receita"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="382dp"
             android:layout_height="wrap_content"
-            android:text="Alterar Linguagem">
-        </Button>
+            android:layout_centerInParent="true"
+            android:text="@string/btn_alterar_linguagem">
+        </Spinner>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="add number"
             android:onClick="loadAddNumber">
     </Button>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
