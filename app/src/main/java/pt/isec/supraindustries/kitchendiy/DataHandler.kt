@@ -10,7 +10,8 @@ class DataHandler {
 
     companion object{
         var lista :  ArrayList<Int> = ArrayList()
-        var receitas : ArrayList<Receita> = ArrayList()
+        var receitas_pt : ArrayList<Receita> = ArrayList()
+        var receitas_ing : ArrayList<Receita> = ArrayList()
 
         fun addInt(num: Int){
             lista.add(num)
@@ -27,13 +28,15 @@ class DataHandler {
         }
 
         fun LoadReceitas(mcontext: Context){
-            LoadReceitaByName(mcontext,"[pt]bolonhesa_de_lentilhas")
-            LoadReceitaByName(mcontext,"[pt]esparguete_a_bolonhesa")
+            LoadReceitaByName(mcontext,"[pt]bolonhesa_de_lentilhas_pt", "pt")
+            LoadReceitaByName(mcontext,"[pt]esparguete_a_bolonhesa_pt", "pt")
+            LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
+            LoadReceitaByName(mcontext,"pao_com_chourico_ing", "ing")
         }
 
-        fun LoadReceitaByName(mcontext : Context, fileName : String){
+        fun LoadReceitaByName(mcontext : Context, fileName : String, lang: String){
             val Context =  mcontext
-
+            val lang = lang
             var string : String
 
             //val IS : InputStream = Context.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
@@ -55,7 +58,7 @@ class DataHandler {
                     }
                     System.out.println("[EOF Reached]")
 
-                    val IS2 : InputStream = Context.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+                    val IS2 : InputStream = Context.resources.openRawResource(Context.resources.getIdentifier(fileName,"raw",Context.packageName))
                     val reader2 = BufferedReader(InputStreamReader(IS2))
                     iterator = reader2.lineSequence().iterator()
 
@@ -93,7 +96,10 @@ class DataHandler {
                     System.out.println("Creating and adding receita to receitaList")
 
                     var tempReceita = Receita(fileName,listaIngredientes, listaInstrucoes)
-                    receitas.add(tempReceita)
+                    if(lang.equals("pt"))
+                        receitas_pt.add(tempReceita)
+                    else if(lang.equals("ing"))
+                        receitas_ing.add(tempReceita)
                     break;
                 }catch(e: IOException)
                 {

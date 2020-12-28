@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         System.out.println("In main: ")
         System.out.println(DataHandler.receitas[0].getInfo())
         System.out.println(DataHandler.receitas[1].getInfo())
+
         currentLanguage = intent.getStringExtra(currentLang).toString()
         spinner = findViewById(R.id.spinner)
         val list = ArrayList<String>()
