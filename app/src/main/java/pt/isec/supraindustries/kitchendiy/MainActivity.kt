@@ -3,6 +3,7 @@ package pt.isec.supraindustries.kitchendiy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.AdapterView
@@ -22,7 +23,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        Log.i("Debug","Doing load receitas")
+        DataHandler.LoadReceitas(applicationContext, )
+        Log.i("Debug","Load Receitas Done")
+        System.out.println("In main: ")
+        System.out.println(DataHandler.receitas[0].getInfo())
+        System.out.println(DataHandler.receitas[1].getInfo())
         currentLanguage = intent.getStringExtra(currentLang).toString()
         spinner = findViewById(R.id.spinner)
         val list = ArrayList<String>()
