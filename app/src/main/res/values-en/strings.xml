@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> KitchenDIY </string>
+    <string name = "btn_escolher_ingredientes"> Choosing the Ingredients </string>
+    <string name = "btn_ver_receitas"> See Recipes </string>
+    <string name = "btn_informacoes"> Information </string>
+    <string name = "btn_recomendar_ingrediente"> Recommend Ingredient </string>
+    <string name = "btn_recomendar_receita"> Recommend Recipe </string>
+    <string name = "btn_alterar_linguagem"> Change Language </string>
+    <string name = "btn_ver_todas_as_receitas"> See All Recipes </string>
+    <string name = "btn_ver_receitas_por_cozinha"> See Recipes by Cuisine </string>
+    <string name = "txt_Sugestoes"> Suggestions </string>
+    <string name="btn_inicio">"Home"</string>
+
+    <string-array name = "array_ingredientes">
+        <item> Potatoes </item>
+        <item> Rice </item>
+        <item> Massa </item>
+        <item> Lentils </item>
+        <item> Tomato paste </item>
+        <item> Egg </item>
+        <item> Sausages </item>
+        <item> Minced Meat </item>
+        <item> Tuna </item>
+        <item> Natas </item>
+        <item> Fava beans </item>
+        <item> Cheese </item>
+    </string-array>
+
+    <string-array name = "array_receitas">
+        <item> Rice pudding </item>
+        <item> Rice pie with chicken </item>
+        <item> Lentil Bolognese </item>
+        <item> Spaghetti Bolognese </item>
+        <item> Macaroni and sausage in 5 minutes </item>
+        <item> Spanish potatoes </item>
+
+    </string-array>
+</resources>
