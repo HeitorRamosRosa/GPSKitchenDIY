@@ -27,8 +27,8 @@ class DataHandler {
         }
 
         fun LoadReceitas(mcontext: Context){
-            LoadReceitaByName(mcontext,"[pt]bolonhesa_de_lentilhas")
-            LoadReceitaByName(mcontext,"[pt]esparguete_a_bolonhesa")
+            LoadReceitaByName(mcontext,"PT_bolonhesa_de_lentilhas")
+            LoadReceitaByName(mcontext,"PT_esparguete_a_bolonhesa")
         }
 
         fun LoadReceitaByName(mcontext : Context, fileName : String){
