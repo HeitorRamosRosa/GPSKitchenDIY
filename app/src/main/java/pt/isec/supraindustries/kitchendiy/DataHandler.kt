@@ -55,7 +55,7 @@ class DataHandler {
                     }
                     System.out.println("[EOF Reached]")
 
-                    val IS2 : InputStream = Context.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+                    val IS2 : InputStream = Context.resources.openRawResource(R.raw.pt_bolonhesa_de_lentilhas)
                     val reader2 = BufferedReader(InputStreamReader(IS2))
                     iterator = reader2.lineSequence().iterator()
 
