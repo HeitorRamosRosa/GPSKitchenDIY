@@ -12,10 +12,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.i("Debug","Doing load receitas")
-        DataHandler.LoadReceitas(applicationContext)
+        DataHandler.LoadReceitas(applicationContext, )
         Log.i("Debug","Load Receitas Done")
         System.out.println("In main: ")
         System.out.println(DataHandler.receitas[0].getInfo())
+        System.out.println(DataHandler.receitas[1].getInfo())
+
     }
     fun loadEscolherIngredientes(view: View) {
         val intent = Intent(this, EscolherIngredientes::class.java)

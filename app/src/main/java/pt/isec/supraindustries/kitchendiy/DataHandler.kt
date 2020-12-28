@@ -26,15 +26,20 @@ class DataHandler {
             return lista.size
         }
 
-        fun LoadReceitas(mcontext : Context){
+        fun LoadReceitas(mcontext: Context){
+            LoadReceitaByName(mcontext,"bolonhesa_de_lentilhas")
+            LoadReceitaByName(mcontext,"esparguete_a_bolonhesa")
+        }
+
+        fun LoadReceitaByName(mcontext : Context, fileName : String){
             val Context =  mcontext
 
             var string : String
-            val stringBuilder = StringBuilder()
-            //val fileContent= DataHandler::class.java.getResource("bolonhesa_de_lentilhas.txt").readText()
-            //val IS : InputStream = DataHandler::class.java.getResourceAsStream("bolonhesa_de_lentinhas.txt")
 
-            val IS : InputStream = Context.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+            //val IS : InputStream = Context.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
+            //o de baixo equivale ao de cima, mas encontrando o resource por string em vez de ir diretamente.
+            val IS : InputStream = Context.resources.openRawResource(Context.resources.getIdentifier(fileName,"raw",Context.packageName))
+
             val reader = BufferedReader(InputStreamReader(IS))
             do
             {
@@ -43,7 +48,6 @@ class DataHandler {
                 var readMore = true
                 try
                 {
-
                     var iterator = reader.lineSequence().iterator()
                     while(iterator.hasNext()){
                         string = iterator.next()
@@ -70,7 +74,7 @@ class DataHandler {
                             break;
                         }
                         var quantidade = iterator.next()
-                        System.out.println("Extracting: ["+string+"] q:["+quantidade+"]")
+                        //System.out.println("Extracting: ["+string+"] q:["+quantidade+"]")
                         var temp : Ingrediente = Ingrediente(string, quantidade)
                         listaIngredientes.add(temp)
                     }
@@ -88,7 +92,7 @@ class DataHandler {
 
                     System.out.println("Creating and adding receita to receitaList")
 
-                    var tempReceita : Receita = Receita("bolonhesa_de_lentilhas",listaIngredientes, listaInstrucoes)
+                    var tempReceita = Receita(fileName,listaIngredientes, listaInstrucoes)
                     receitas.add(tempReceita)
                     break;
                 }catch(e: IOException)
