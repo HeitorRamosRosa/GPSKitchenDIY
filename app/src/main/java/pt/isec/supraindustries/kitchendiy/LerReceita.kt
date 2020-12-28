@@ -31,7 +31,7 @@ class LerReceita : AppCompatActivity() {
     fun ler() {
         var string: String? = ""
         val stringBuilder = StringBuilder()
-        val `is`: InputStream = this.resources.openRawResource(R.raw.pt_bolonhesa_de_lentilhas)
+        val `is`: InputStream = this.resources.openRawResource(R.raw.pt_esparguete_a_bolonhesa)
 
         val reader = BufferedReader(InputStreamReader(`is`))
         while (true) {

@@ -27,9 +27,14 @@ class MainActivity : AppCompatActivity() {
         DataHandler.LoadReceitas(applicationContext, )
         Log.i("Debug","Load Receitas Done")
         System.out.println("In main: ")
+<<<<<<< HEAD
         System.out.println(DataHandler.receitas[0].getInfo())
         System.out.println(DataHandler.receitas[1].getInfo())
 
+=======
+        System.out.println(DataHandler.receitas_pt[0].getInfo())
+        System.out.println(DataHandler.receitas_pt[1].getInfo())
+>>>>>>> ClassReceitaELoad
         currentLanguage = intent.getStringExtra(currentLang).toString()
         spinner = findViewById(R.id.spinner)
         val list = ArrayList<String>()

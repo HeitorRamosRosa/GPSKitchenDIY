@@ -28,12 +28,17 @@ class DataHandler {
         }
 
         fun LoadReceitas(mcontext: Context){
+<<<<<<< HEAD
             LoadReceitaByName(mcontext,"bolonhesa_de_lentilhas_pt", "pt")
             LoadReceitaByName(mcontext,"esparguete_a_bolonhesa_pt", "pt")
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
             LoadReceitaByName(mcontext,"pao_com_chourico_ing", "ing")
             LoadReceitaByName(mcontext,"PT_bolonhesa_de_lentilhas")
             LoadReceitaByName(mcontext,"PT_esparguete_a_bolonhesa")
+=======
+            LoadReceitaByName(mcontext,"pt_pao_com_chourico", "pt")
+            LoadReceitaByName(mcontext,"pt_esparguete_a_bolonhesa", "pt")
+>>>>>>> ClassReceitaELoad
         }
 
         fun LoadReceitaByName(mcontext : Context, fileName : String, lang: String){
@@ -93,7 +98,7 @@ class DataHandler {
                             listaInstrucoes.add(string)
                         }
                     }
-                    //System.out.println("Got "+listaIngredientes.size+" ingredientes")
+                    System.out.println("Got "+listaIngredientes.size+" ingredientes")
 
                     System.out.println("Creating and adding receita to receitaList")
 
