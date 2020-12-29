@@ -25,12 +25,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.i("Debug","Doing load receitas")
-        DataHandler.LoadReceitas(applicationContext, )
-        Log.i("Debug","Load Receitas Done")
-        System.out.println("In main: ")
-        System.out.println(DataHandler.receitas_pt[0].getInfo())
-        System.out.println(DataHandler.receitas_pt[1].getInfo())
+        Log.i("Debug","[Loading Receitas]")
+        DataHandler.LoadReceitas(applicationContext)
+        Log.i("Debug","[Load Complete]")
+        System.out.println("[In main - Showing Loaded Receitas]:")
+        //Debugging Function
+        DataHandler.ListaAllReceitasInfo()
+        System.out.println("[In main - Done Showing Receitas]")
+
         currentLanguage = intent.getStringExtra(currentLang).toString()
         spinner = findViewById(R.id.spinner)
         val list = ArrayList<String>()

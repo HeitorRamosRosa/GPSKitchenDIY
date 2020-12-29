@@ -29,7 +29,12 @@ class DataHandler {
 
         fun LoadReceitas(mcontext: Context){
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
+            LoadReceitaByName(mcontext,"pao_com_chourico_ing", "ing")
             LoadReceitaByName(mcontext,"esparguete_a_bolonhesa_pt", "pt")
+            LoadReceitaByName(mcontext,"creme_de_cogumelos_e_legumes_pt", "pt")
+            LoadReceitaByName(mcontext,"creme_de_cogumelos_e_legumes_ing", "ing")
+            LoadReceitaByName(mcontext,"bolonhesa_de_lentilhas_pt", "pt")
+
         }
 
         fun LoadReceitaByName(mcontext : Context, fileName : String, lang: String){
@@ -54,7 +59,7 @@ class DataHandler {
                         string = iterator.next()
                         System.out.println(string)
                     }
-                    System.out.println("[EOF Reached]")
+                    //System.out.println("[EOF Reached]")
 
                     val IS2 : InputStream = Context.resources.openRawResource(Context.resources.getIdentifier(fileName,"raw",Context.packageName))
                     val reader2 = BufferedReader(InputStreamReader(IS2))
@@ -63,7 +68,7 @@ class DataHandler {
                     while(iterator.hasNext()){
                         string = iterator.next()
                         if(string.equals("Ingredientes:")){
-                            System.out.println("Extracting ingredientes.")
+                            //System.out.println("Extracting ingredientes.")
                             break;
                         }
                     }
@@ -71,7 +76,7 @@ class DataHandler {
                         string = iterator.next()
                         if(string.equals("Preparação:")){
                             readMore = false
-                            System.out.println("Extracting Done.")
+                            //System.out.println("Extracting Done.")
                             break;
                         }
                         var quantidade = iterator.next()
@@ -83,15 +88,15 @@ class DataHandler {
                     while(iterator.hasNext()){
                         string = iterator.next()
                         if(string.equals("Preparação:"))
-                            System.out.println("Getting instruções");
+                           //System.out.println("Getting instruções");
                         else
                         {
                             listaInstrucoes.add(string)
                         }
                     }
-                    System.out.println("Got "+listaIngredientes.size+" ingredientes")
+                    //System.out.println("Got "+listaIngredientes.size+" ingredientes")
 
-                    System.out.println("Creating and adding receita to receitaList")
+                    //System.out.println("Creating and adding receita to receitaList")
 
                     var tempReceita = Receita(fileName,listaIngredientes, listaInstrucoes)
                     if(lang.equals("pt"))
@@ -106,25 +111,14 @@ class DataHandler {
             }while(true)
         }
 
-        /*
-       fun ler() {
-            var string: String? = ""
-            val stringBuilder = StringBuilder()
-            val `is`: InputStream = this.resources.openRawResource(R.raw.bolonhesa_de_lentilhas)
-            val reader = BufferedReader(InputStreamReader(`is`))
-            while (true) {
-                try {
-                    if (reader.readLine().also { string = it } == null) break
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-                stringBuilder.append(string).append("\n")
-                tv_receita.text = stringBuilder
-            }
-            `is`.close()
+        fun ListaAllReceitasInfo() {
+            System.out.println("[RECEITAS PT]: "+ receitas_pt.size)
+            for(receita in receitas_pt)
+                System.out.println(receita.getInfo())
+            System.out.println("[RECEITAS ING] "+ receitas_ing.size)
+            for(receita in receitas_ing)
+                System.out.println(receita.getInfo())
         }
-        */
-
 
     }
 
