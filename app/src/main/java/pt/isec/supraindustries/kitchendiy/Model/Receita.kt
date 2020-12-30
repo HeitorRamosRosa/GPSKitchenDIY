@@ -1,4 +1,4 @@
-package pt.isec.supraindustries.kitchendiy
+package pt.isec.supraindustries.kitchendiy.Model
 
 class Receita(var nome : String, var ingredientes: ArrayList<Ingrediente>, var indicacoes : ArrayList<String>) {
 

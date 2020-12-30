@@ -1,31 +1,15 @@
-package pt.isec.supraindustries.kitchendiy
+package pt.isec.supraindustries.kitchendiy.Model
 
 import android.content.Context
-import android.os.Environment
-import android.util.Log
-import kotlinx.android.synthetic.main.activity_receita.*
 import java.io.*
 
 class DataHandler {
 
     companion object{
-        var lista :  ArrayList<Int> = ArrayList()
         var receitas_pt : ArrayList<Receita> = ArrayList()
         var receitas_ing : ArrayList<Receita> = ArrayList()
-
-        fun addInt(num: Int){
-            lista.add(num)
-        }
-
-        fun getNumber(index: Int) : Int{
-            if(index>=lista.size)
-                return -1
-            return lista[index]
-        }
-
-        fun getSize() : Int{
-            return lista.size
-        }
+        var ingredientes_pt : MutableSet<String> = mutableSetOf()     //contem o NOME de todos os ingredientes presentes nas receitas, nao os objetos ingredientes em si, porque os objetos ingrediente contêm dentro de si a informação sobre a quantidade.
+        var ingredientes_ing : MutableSet<String> = mutableSetOf()   //A forma mais correta de programar isto seria ter um hashmap nas receitas com (ingrediente, quantidade) para podermos ter aqui um Set de ingredientes.
 
         fun LoadReceitas(mcontext: Context){
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
@@ -34,7 +18,6 @@ class DataHandler {
             LoadReceitaByName(mcontext,"creme_de_cogumelos_e_legumes_pt", "pt")
             LoadReceitaByName(mcontext,"creme_de_cogumelos_e_legumes_ing", "ing")
             LoadReceitaByName(mcontext,"bolonhesa_de_lentilhas_pt", "pt")
-
         }
 
         fun LoadReceitaByName(mcontext : Context, fileName : String, lang: String){
@@ -51,6 +34,7 @@ class DataHandler {
             {
                 var listaIngredientes: ArrayList<Ingrediente> = ArrayList()
                 var listaInstrucoes : ArrayList<String> = ArrayList()
+
                 var readMore = true
                 try
                 {
@@ -99,6 +83,7 @@ class DataHandler {
                     //System.out.println("Creating and adding receita to receitaList")
 
                     var tempReceita = Receita(fileName,listaIngredientes, listaInstrucoes)
+                    GuardaNovosIngredientes(listaIngredientes, lang)
                     if(lang.equals("pt"))
                         receitas_pt.add(tempReceita)
                     else if(lang.equals("ing"))
@@ -111,6 +96,25 @@ class DataHandler {
             }while(true)
         }
 
+        private fun GuardaNovosIngredientes(listaIngredientes: ArrayList<Ingrediente>, lang: String) {
+                if(lang.equals("pt"))
+                {
+                    for(ingrediente in listaIngredientes)
+                    {
+                        if(!ingredientes_pt.contains(ingrediente.nome))
+                            ingredientes_pt.add(ingrediente.nome)
+                    }
+                }
+                else if(lang.equals("ing"))
+                {
+                    for(ingrediente in listaIngredientes)
+                    {
+                        if(!ingredientes_ing.contains(ingrediente.nome))
+                            ingredientes_ing.add(ingrediente.nome)
+                    }
+                }
+        }
+
         fun ListaAllReceitasInfo() {
             System.out.println("[RECEITAS PT]: "+ receitas_pt.size)
             for(receita in receitas_pt)
@@ -118,6 +122,14 @@ class DataHandler {
             System.out.println("[RECEITAS ING] "+ receitas_ing.size)
             for(receita in receitas_ing)
                 System.out.println(receita.getInfo())
+        }
+        fun listaAllIngredientesNome(){
+            System.out.println("[INGREDIENTES-PT]: "+ ingredientes_pt.size)
+            for(ingrediente in ingredientes_pt)
+                System.out.println(ingrediente)
+            System.out.println("[INGREDIENTES-ING]: "+ ingredientes_ing.size)
+            for(ingrediente in ingredientes_ing)
+                System.out.println(ingrediente)
         }
 
     }
