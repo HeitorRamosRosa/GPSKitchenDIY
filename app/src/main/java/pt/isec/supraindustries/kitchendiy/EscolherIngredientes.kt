@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_escolher_ingredientes.*
+import pt.isec.supraindustries.kitchendiy.Model.DataHandler
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -58,12 +59,14 @@ class EscolherIngredientes : AppCompatActivity() {
         listarIngredientes()
     }
     private fun listarIngredientes() {
-        val lista = Listas(this).getListaIngredientes()
-        val cenas = ArrayList<String>()
-        for (i in lista.indices){
-            cenas.add(lista[i])
-        }
-        adapter = RecyclerViewAdapter(cenas)
+        //val lista = Listas(this).getListaIngredientes()
+        //val cenas = ArrayList<String>()
+        //for (i in lista.indices){
+        //    cenas.add(lista[i])
+        //}
+
+
+        adapter = RecyclerViewAdapter(DataHandler.getIngredientes())
         ingredientesrv.adapter = adapter
     }
 
