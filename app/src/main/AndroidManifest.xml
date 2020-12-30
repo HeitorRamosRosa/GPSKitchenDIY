@@ -14,8 +14,6 @@
         <activity android:name=".VerReceitas" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".EscolherIngredientes" />
-        <activity android:name=".getNumber" />
-        <activity android:name=".addNumber" />
         <activity android:name=".MainActivity">
 
             <intent-filter>

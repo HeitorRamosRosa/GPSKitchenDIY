@@ -74,21 +74,6 @@
             android:text="@string/btn_alterar_linguagem">
         </Spinner>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="add number"
-            android:onClick="loadAddNumber">
-    </Button>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="getNumber"
-            android:onClick="loadGetNumber">
-    </Button>
-
-
     </LinearLayout>
 
 </LinearLayout>

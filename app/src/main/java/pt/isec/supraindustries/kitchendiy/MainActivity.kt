@@ -7,12 +7,12 @@ import android.os.Bundle
 import android.text.Html
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import pt.isec.supraindustries.kitchendiy.Model.DataHandler
 import java.util.*
 import kotlin.system.exitProcess
 
@@ -28,10 +28,11 @@ class MainActivity : AppCompatActivity() {
         Log.i("Debug","[Loading Receitas]")
         DataHandler.LoadReceitas(applicationContext)
         Log.i("Debug","[Load Complete]")
-        System.out.println("[In main - Showing Loaded Receitas]:")
+        System.out.println("[In main - Showing Loaded Info]:")
         //Debugging Function
         DataHandler.ListaAllReceitasInfo()
-        System.out.println("[In main - Done Showing Receitas]")
+        DataHandler.listaAllIngredientesNome()
+        System.out.println("[In main - Done Showing Info]")
 
         currentLanguage = intent.getStringExtra(currentLang).toString()
         spinner = findViewById(R.id.spinner)
@@ -92,17 +93,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun loadAddNumber(view: View) {
-        val intent = Intent(this, addNumber::class.java)
-        startActivity(intent)
-    }
-    fun loadGetNumber(view: View) {
-        val intent = Intent(this, getNumber::class.java)
-        startActivity(intent)
-    }
-
     fun loadInformacoes(view: View) {
-        val intent = Intent(this,Informacoes::class.java)
+        val intent = Intent(this, Informacoes::class.java)
         startActivity(intent)
     }
 
