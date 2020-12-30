@@ -1,6 +1,7 @@
 package pt.isec.supraindustries.kitchendiy.Model
 
 import android.content.Context
+import pt.isec.supraindustries.kitchendiy.MainActivity
 import java.io.*
 
 class DataHandler {
@@ -130,6 +131,19 @@ class DataHandler {
             System.out.println("[INGREDIENTES-ING]: "+ ingredientes_ing.size)
             for(ingrediente in ingredientes_ing)
                 System.out.println(ingrediente)
+        }
+        fun getIngredientes() : ArrayList<String>{
+            var list : ArrayList<String> = ArrayList()
+
+            if(MainActivity.cLang.equals("pt")){
+                for(nome in ingredientes_pt.asIterable())
+                    list.add(nome)
+            }
+            else if(MainActivity.cLang.equals("ing")){
+                for(nome in ingredientes_ing.asIterable())
+                    list.add(nome)
+            }
+            return list;
         }
 
     }

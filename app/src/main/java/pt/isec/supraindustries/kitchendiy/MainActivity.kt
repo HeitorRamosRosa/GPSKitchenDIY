@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
     private var currentLanguage = "pt"
     private var currentLang: String? = null
 
+    companion object{
+        var cLang: String = "pt"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,6 +61,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun setLocale(localeName: String) {
+        if(localeName.equals("pt")){
+            System.out.println("Setting language to pt")
+            cLang="pt"
+        }
+        else if(localeName.equals("en")){
+            System.out.println("Setting language to ing")
+            cLang="ing"
+        }
+
         if (localeName != currentLanguage) {
             locale = Locale(localeName)
             val res = resources
