@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_ver_receitas.*
+import pt.isec.supraindustries.kitchendiy.Model.DataHandler
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -58,12 +59,13 @@ class VerReceitas : AppCompatActivity() {
         listarreceitas()
     }
     private fun listarreceitas() {
-        val lista = Listas(this).getListaReceitas()
-        val cenas = ArrayList<String>()
-        for (i in lista.indices){
-            cenas.add(lista[i])
-        }
-        adapter = RecyclerViewAdapter(cenas)
+        //val lista = Listas(this).getListaReceitas()
+        //val cenas = ArrayList<String>()
+        //for (i in lista.indices){
+        //    cenas.add(lista[i])
+        //}
+
+        adapter = RecyclerViewAdapter(DataHandler.getReceitas())
         receitasrv.adapter = adapter
     }
 

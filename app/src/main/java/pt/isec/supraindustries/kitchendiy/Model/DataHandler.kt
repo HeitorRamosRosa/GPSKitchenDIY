@@ -35,7 +35,7 @@ class DataHandler {
             {
                 var listaIngredientes: ArrayList<Ingrediente> = ArrayList()
                 var listaInstrucoes : ArrayList<String> = ArrayList()
-
+                var nome : String = String()
                 var readMore = true
                 try
                 {
@@ -55,7 +55,7 @@ class DataHandler {
                         if(string.equals("Ingredientes:")){
                             //System.out.println("Extracting ingredientes.")
                             break;
-                        }
+                        } else nome = string;
                     }
                     while(iterator.hasNext() && readMore ){
                         string = iterator.next()
@@ -83,7 +83,7 @@ class DataHandler {
 
                     //System.out.println("Creating and adding receita to receitaList")
 
-                    var tempReceita = Receita(fileName,listaIngredientes, listaInstrucoes)
+                    var tempReceita = Receita(nome,listaIngredientes, listaInstrucoes)
                     GuardaNovosIngredientes(listaIngredientes, lang)
                     if(lang.equals("pt"))
                         receitas_pt.add(tempReceita)
@@ -144,6 +144,19 @@ class DataHandler {
                     list.add(nome)
             }
             return list;
+        }
+
+        fun getReceitas(): ArrayList<String> {
+            var receitasNomes : ArrayList<String> = ArrayList()
+            if(MainActivity.cLang.equals("pt")){
+                for(receitas in receitas_pt)
+                    receitasNomes.add(receitas.nome)
+            }
+            if(MainActivity.cLang.equals("ing")){
+                for(receitas in receitas_ing)
+                    receitasNomes.add(receitas.nome)
+            }
+            return receitasNomes
         }
 
     }
