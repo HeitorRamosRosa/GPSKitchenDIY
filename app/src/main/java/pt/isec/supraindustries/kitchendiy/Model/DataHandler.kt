@@ -18,6 +18,8 @@ class DataHandler {
 
 
         fun LoadReceitas(mcontext: Context){
+            receitas_pt = ArrayList<Receita>()
+            receitas_ing = ArrayList<Receita>()
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
             LoadReceitaByName(mcontext,"pao_com_chourico_ing", "ing")
             LoadReceitaByName(mcontext,"esparguete_a_bolonhesa_pt", "pt")

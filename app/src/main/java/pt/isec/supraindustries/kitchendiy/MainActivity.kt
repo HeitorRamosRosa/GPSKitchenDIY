@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             )
             refresh.putExtra(currentLang, localeName)
             startActivity(refresh)
+            finish()
         } else {
             Toast.makeText(
                     this@MainActivity, "Language, , already, , selected)!", Toast.LENGTH_SHORT).show();

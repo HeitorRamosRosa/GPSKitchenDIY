@@ -33,8 +33,7 @@ class VerReceitas : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.btnInicio)
         button.setOnClickListener {
-            val i = Intent(this@VerReceitas, MainActivity::class.java)
-            startActivity(i)
+            finish()
         }
 
 //listagem de receitas_V2
