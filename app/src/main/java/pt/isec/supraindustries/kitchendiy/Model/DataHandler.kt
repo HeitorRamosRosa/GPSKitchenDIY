@@ -1,6 +1,7 @@
 package pt.isec.supraindustries.kitchendiy.Model
 
 import android.content.Context
+import android.util.Log
 import pt.isec.supraindustries.kitchendiy.MainActivity
 import java.io.*
 
@@ -11,6 +12,10 @@ class DataHandler {
         var receitas_ing : ArrayList<Receita> = ArrayList()
         var ingredientes_pt : MutableSet<String> = mutableSetOf()     //contem o NOME de todos os ingredientes presentes nas receitas, nao os objetos ingredientes em si, porque os objetos ingrediente contêm dentro de si a informação sobre a quantidade.
         var ingredientes_ing : MutableSet<String> = mutableSetOf()   //A forma mais correta de programar isto seria ter um hashmap nas receitas com (ingrediente, quantidade) para podermos ter aqui um Set de ingredientes.
+
+        lateinit var NomeReceita : String
+
+
 
         fun LoadReceitas(mcontext: Context){
             LoadReceitaByName(mcontext,"pao_com_chourico_pt", "pt")
@@ -157,6 +162,22 @@ class DataHandler {
                     receitasNomes.add(receitas.nome)
             }
             return receitasNomes
+        }
+
+        fun getReceitaToPrint(): Receita {
+            var lReceita : List<Receita>
+            if(MainActivity.cLang.equals("pt"))
+                lReceita = receitas_pt
+            else
+                lReceita = receitas_ing
+
+            for(receita in lReceita){
+                if(NomeReceita.equals(receita.nome))
+                    return receita;
+            }
+            //shouldn't be reached
+            Log.i("Problem","reached bad point in getReceitaToPrint -> DataHandler")
+            return lReceita[0]
         }
 
     }
