@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var currentLang: String? = null
 
     companion object{
-        var cLang: String = "pt"
+        var cLang: String = "ing"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
