@@ -6,12 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.BaseAdapter
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlinx.android.synthetic.main.recyclerview_row.view.*
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.TextView
+import pt.isec.supraindustries.kitchendiy.Model.Receita
 
 class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
@@ -78,5 +81,7 @@ class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
 
         }
     }
+
+
 
 }
