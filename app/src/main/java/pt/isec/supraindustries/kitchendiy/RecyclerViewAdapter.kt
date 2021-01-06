@@ -50,6 +50,7 @@ class RecyclerViewAdapter (private var listaIngredientes: ArrayList<String>) :
             intent.putExtra("stuff", filtroListaIngredientes[position])
             mcontext.startActivity(intent)
             Log.d("Selected:", filtroListaIngredientes[position])
+
         }
     }
 
